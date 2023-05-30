@@ -1,0 +1,19 @@
+overwrite: true
+schema:
+  "src/main/graphql/schemas/**/*.graphql":
+    noRequire: true
+documents: null
+generates:
+  src/main/graphql/schemas/types.ts:
+    plugins:
+      - typescript
+      - typescript-resolvers
+
+    config:
+      federation: true
+      namingConvention:
+        enumValues: change-case#upperCase
+      avoidOptionals: false
+      useTypeImports: true
+      showUnusedMappers: true
+      resolverTypeWrapperSignature: T

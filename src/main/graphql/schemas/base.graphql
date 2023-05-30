@@ -1,0 +1,4 @@
+type Mutation
+type Query {
+  dummy: String
+}
