@@ -1,0 +1,16 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5433,
+  "username": "postgres",
+  "password": "123456789",
+  "database": "cleanarch",
+  "synchronize": true,
+  "logging": true,
+  "entities": [
+    "src/infra/repositories/**/*.ts"
+  ],
+  "migrations": [
+    "src/infra/repositories/**/migrations/*.ts"
+  ]
+}

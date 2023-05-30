@@ -1,0 +1,9 @@
+input UserRegistrationInput {
+  email: String!
+  password: String!
+  confirmPassword: String!
+}
+
+extend type Mutation {
+  userRegistration(input: UserRegistrationInput!): String!
+}

@@ -1,0 +1,26 @@
+version: "3.7"
+volumes:
+  cleanarch-data:
+
+
+services:
+  cleanarch-db:
+    image: postgres:11.6-alpine
+    restart: always
+    labels:
+      - "autoheal=true"
+    environment:
+      - POSTGRES_PASSWORD=123456789
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=cleanarch
+    expose:
+      - '5433'
+    ports:
+      - "127.0.0.1:5433:5432"
+    networks:
+      - private
+    volumes:
+      - "cleanarch-data:/var/lib/postgresql/data"
+
+networks:
+  private:
